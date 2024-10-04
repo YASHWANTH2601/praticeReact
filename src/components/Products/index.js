@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ProductCard from "../ProuctCard";
+import ProductCard from "../ProductCard";
 
 export default class Products extends Component {
   state = { productList: [] };
@@ -20,7 +20,7 @@ export default class Products extends Component {
   };
   render() {
     const { productList } = this.state;
-    
+
     return (
       <>
         {productList.length > 0 ? (

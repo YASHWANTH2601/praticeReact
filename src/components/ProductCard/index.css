@@ -1,0 +1,10 @@
+.productImg{
+    width: 200px;
+    height: 200px;
+}
+
+
+.productLink{
+    text-decoration: none;
+    color: green;
+}
