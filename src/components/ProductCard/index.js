@@ -4,11 +4,9 @@ import "./index.css";
 export default function ProductCard(props) {
   const { product } = props;
   const { id, title, description, image, price, category } = product;
-  const clicked = () => {
-    console.log(id);
-  };
+ 
   return (
-    <li onClick={clicked}>
+    <li >
       <Link className="productLink" to={`/products/${id}`}>
         {/* eslint-disable-next-line jsx-a11y/alt-text */}
         <img src={image} className="productImg" />

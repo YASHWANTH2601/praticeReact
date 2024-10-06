@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Products from "./components/Products";
 import Cart from "./components/Cart";
-import ProductDetails from "./components/ProductDetails";
+import ProductDetailsWrapper from "./components/ProductDetailsWrapper";
 import React, { Component } from "react";
 import CartContext from "./context/CartContext";
 
@@ -14,9 +14,12 @@ class App extends Component {
   removeAllCartItems = () => {};
   removeCartItem = () => {};
   addToCart = (productList) => {
+    const { cartList } = this.state;
     this.setState({ cartList: productList });
   };
   render() {
+    const { cartList } = this.state;
+
     return (
       // eslint-disable-next-line react/jsx-pascal-case
       <CartContext.Provider
@@ -33,7 +36,11 @@ class App extends Component {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/products" element={<Products />} />
-          <Route exact path="/products/:id" element={<ProductDetails />} />
+          <Route
+            exact
+            path="/products/:id"
+            element={<ProductDetailsWrapper />}
+          />
           <Route exact path="/cart" element={<Cart />} />
         </Routes>
       </CartContext.Provider>
