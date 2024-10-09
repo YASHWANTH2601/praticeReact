@@ -26,11 +26,11 @@ class App extends Component {
         value={{
           // eslint-disable-next-line no-undef
           cartList,
+          addToCart: this.addToCart(),
           incrementCartItemQuantity: this.incrementCartItemQuantity(),
           decrementCartItemQuantity: this.decrementCartItemQuantity(),
           removeCartItem: this.removeCartItem(),
           removeAllCartItems: this.removeAllCartItems(),
-          addToCart: this.addToCart(),
         }}
       >
         <Routes>

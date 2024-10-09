@@ -40,18 +40,13 @@ export default class ProductDetails extends Component {
     return (
       <CartContext.Consumer>
         {(value) => {
-          const { addToCart } = value;
-
-
-         
+          const { addToCart } = value;         
           const addtoCartHandle = () => {
-         
             addToCart({ ...productList, quantity });
           };
 
           return (
             <>
-             
               <img src={image} className="productImg" alt={title} />
               <h1>{title}</h1>
               <p>${price}</p>
