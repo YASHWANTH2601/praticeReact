@@ -1,27 +1,30 @@
 import React, { Component } from "react";
 import CartContext from "../../context/CartContext";
 import CartItem from "../CartItem";
-import Header from "../Header"
+import Header from "../Header";
+
 export default class Cart extends Component {
   render() {
     return (
       <CartContext.Consumer>
         {(value) => {
-          const {cartList}=value
-
+          const { cartList,removeAllCartItems } = value;
+         const removeAll=()=>{
+          removeAllCartItems()
+         }
           return (
             <>
-            <Header />
+              <Header />
               {cartList.length > 0 ? (
                 <ul>
+                <button onClick={removeAll}>Remove All</button>
                   {cartList.map((eachProduct) => (
-                    <CartItem />
+                    <CartItem products={eachProduct} key={eachProduct.id} />
                   ))}
                 </ul>
               ) : (
                 <>Ntg</>
               )}
-              cart
             </>
           );
         }}

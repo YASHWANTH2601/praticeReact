@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./index.css"
 export default function Header() {
   return (
-    <nav>
-      <ul>
-        <li>
+    <nav className="navBar">
+      <ul className="navlist">
+        <li >
           <Link to="/">Home</Link>
         </li>
         <li>

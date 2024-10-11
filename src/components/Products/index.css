@@ -1,0 +1,9 @@
+.productsContainer{
+    display: flex;
+}
+.productListContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+}
